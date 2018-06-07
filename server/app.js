@@ -14,7 +14,6 @@ var app = express();
 app.use(cors({
   origin:['http://localhost:8080'],
   methods:['GET','POST'],
-  // alloweHeaders:['Conten-Type', 'Authorization']
 }));
 
 // view engine setup
@@ -45,13 +44,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-app.get('/test', function (req, res) {
-  res.json(
-    {
-      greeting:'hello'
-    }
-  )
-})
 
 module.exports = app;
